@@ -1,0 +1,216 @@
+
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">Simple Listing 2</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../index.html" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">Simple Listing 2</span><meta itemprop="position" content="2" /></li></ul></div></nav> </div>
+</div>
+</div>
+<div id="content" class="site-content fullwidth_page">
+	<div class="appulse-main-content-inner">
+			<div id="primary" class="content-area page_no_sidebar">
+<main id="main" class="site-main" role="main">
+<article id="post-437" class="post-437 page type-page status-publish hentry no-feature-image">
+<div class="entry-content">
+<div class="kc_clfw"></div>
+
+	<div class="kc-elm kc-css-550363 kc_col-sm-9 kc_column kc_col-sm-9">
+		<div class="kc-col-container">
+			<div class="loop epl-shortcode">
+				<div class="loop-content epl-shortcode-listing epl-template-blog">
+					<div class="row xt-epl-list-row"><div class="epl-archive-utility-wrapper epl-clearfix"> <div class="epl-switching-sorting-wrap epl-clearfix">
+						<div class="title-listing">
+							<h2>Property Listing </h2>
+						</div>
+					</div>
+			 <div class="epl-properties-sorting epl-clearfix">
+				 <select id="epl-sort-listings">
+					 <option selected='selected' value="">Sort</option>
+					 <option value="high">Price: High to Low </option>
+					  <option value="low">Price: Low to High </option>
+					  <option value="new">Date: Newest First </option>
+						<option value="old">Date: Oldest First </option>
+						<option value="status_asc">Status : Current First </option>
+						<option value="status_desc">Status : Sold/Leased First </option>
+						<option value="location_asc">Suburb A-Z </option>
+						<option value="location_desc">Suburb Z-A </option>
+					</select>
+				</div>
+			</div>
+		</div>
+		{{#if property.length }}
+		{{#each property}}
+<style media="screen">
+	.label-featured{
+		text-transform: uppercase;
+	}
+</style>
+<div id="post-130" class="epl-listing-post epl-property-blog epl-clearfix col-md-6 post-130 property type-property status-publish has-post-thumbnail hentry location-commercial-properties epl-status-current">
+	<div class="epl-property-blog-entry-wrapper epl-clearfix">
+		<div class="property-box property-box-left property-featured-image-wrapper">
+			<span class="label-featured">{{ property_category }}</span>
+			{{#if special_product }}
+			<ul class="actions"><li><span class="" style="font-size:20px;color:green; border-radius:100%">
+			<i class="fa fa-check-circle" aria-hidden="true">
+			</i></span></li></ul>
+			{{/if}}
+		<div class="epl-archive-entry-image">
+			<a href="/property/{{ id }}">
+				<div class="epl-blog-image">
+					<div class="epl-stickers-wrapper">
+					</div>
+					<img width="600" height="450" src="/uploads/images/{{ property_images.[0] }}" class="teaser-left-thumb wp-post-image" alt="" /> </div>
+				</a>
+			</div>
+		</div>
+		<div class="property-box property-box-right property-content">
+			<h3 class="entry-title"><a href="">{{ property_title }}</a></h3>
+			<div class="property-address">
+				<a href="/property/{{ id }}">
+					<div class="adderess"><i class="icon-location-pin"></i> {{ property_location }}</div>
+				</a>
+			</div>
+			<div class="entry-content">
+				<div class="epl-excerpt-content">
+					<p>{{ property_details }}</p>
+				</div>
+			</div>
+
+     <div class="property-feature-icons">
+			 {{# each property_features }}
+			<button class='btn btn-default btn-sm' style='color:green'> {{this}} </button>
+			{{/ each }}
+		</div>
+		<div class="price">
+		 <span class="page-price">&#x20A6;{{ property_price }}</span> </div>
+		</div>
+    <div class="xt-epl-price-details">
+			<span class="page-price">#{{ property_price }}</span>
+			<a class="btn btn-common xt-epl-details-list" href="/property/{{ id }}">Details</a>
+		</div>
+	 </div>
+</div>
+{{/each}}
+{{else}}
+  <div class="alert alert-warning" role="alert">
+    No category Found
+  </div>
+{{/if}}
+
+</div></div></div></div></section> </div>
+<section class="kc-elm kc-css-715682 kc_row xt_kc_row_has_container xt_kc_row_has_padding">
+	<div class="xt-kc-row-container  container">
+		<div class="kc-wrap-columns clearfix">
+			<div class="kc-elm kc-css-539876 kc_col-sm-3 kc_column kc_col-sm-3">
+				<div class="kc-col-container">
+					<div class="kc-elm kc-css-662490 widget-area kc-wp-sidebar">
+
+				<section id="epl_recent_property-4" class="widget widget_epl_recent_property">
+					<h3 class="widget-title">Latest Listings</h3>
+					<div class="epl-property-widget-image-wrapper">
+      <div id="post-130" class="epl-widget epl-listing-widget property-widget-image epl-widget-status-current">
+					<div class="entry-header">
+					<div class="epl-archive-entry-image">
+					<a href="../property/northwave-ec/index.html">
+					<div class="epl-blog-image">
+					<img width="150" height="150" src="../wp-content/uploads/2017/09/six-150x150.jpg" class="teaser-left-thumb wp-post-image" alt="" srcset="http://appulse.wpbranch.com/wp-content/uploads/2017/09/six-150x150.jpg 150w, http://appulse.wpbranch.com/wp-content/uploads/2017/09/six-100x100.jpg 100w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+					</a>
+					</div>
+					</div>
+					<div class="entry-content">
+           <h5 class="property-heading"><a href="../property/the-morris-residences-review/index.html">Charming West Beautiful Villa</a></h5>
+
+
+</div>
+</section>
+<section id="epl_contact_capture-1" class="widget widget_epl_contact_capture">
+	<h3 class="widget-title">Contact Form</h3><div class="epl-contact-capture-form">
+		 <div class="epl-contact-capture-form-desc"></div>
+							<div class="epl_form_builder_form_container row">
+							<form action="#" id="" class="" enctype="" method="POST" name="">
+							<div id="" class="col-1 epl-inner-div">
+							<span class="epl_form_builder_section_label">
+							</span>
+							<span class="epl_form_builder_section_help">
+							</span>
+							<div class="epl_form_builder_section_fields">
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_text">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_text">First Name
+							</label>
+							</span>
+							<input name="epl_contact_first_name" id="epl_contact_first_name" type="text" data-default="on" value="" class="epl_form_builder_field col-md-12 epl_form_builder_field_text" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_text">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_text">Last Name
+							</label>
+							</span>
+							<input name="epl_contact_last_name" id="epl_contact_last_name" type="text" data-default="on" value="" class="epl_form_builder_field col-md-12 epl_form_builder_field_text" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_email">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_email">Email
+							</label>
+							</span>
+							<input name="epl_contact_email" id="epl_contact_email" type="email" data-default="on" value="" class="epl_form_builder_field col-md-12 epl_form_builder_field_email" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_text">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_text">Phone
+							</label>
+							</span>
+							<input name="epl_contact_phone" id="epl_contact_phone" type="text" data-default="on" value="" class="epl_form_builder_field col-md-12 epl_form_builder_field_text" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_text">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_text">Subject
+							</label>
+							</span>
+							<input name="epl_contact_title" id="epl_contact_title" type="text" data-default="on" value="" class="epl_form_builder_field col-md-12 epl_form_builder_field_text" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_textarea">
+							<label class="epl_form_builder_label col-md-12 epl_form_builder_label_textarea">Message
+							</label>
+							</span>
+							<textarea name="epl_contact_note" id="epl_contact_note" type="textarea" data-default="on" class="epl_form_builder_field col-md-12 epl_form_builder_field_textarea"></textarea>
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_hidden">
+							</span>
+							<input name="epl_contact_listing_id" id="epl_contact_listing_id" type="hidden" value="0" data-default="on" class="epl_form_builder_field col-md-12 epl_form_builder_field_hidden" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_submit">
+							</span>
+							<input name="epl_contact_submit" id="epl_contact_submit" type="submit" value="Submit" data-default="on" class="epl_form_builder_field col-md-12 epl_form_builder_field_submit" />
+							</div> </div>
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_hidden">
+							</span>
+							<input type="hidden" name="epl_form_builder_form_submit" value="true" class="epl_form_builder_field col-md-12 epl_form_builder_field_hidden" id="epl_form_builder_form_submit" />
+							</div>
+							<div class="epl_form_builder_field_container col-md-12">
+							<span class="epl_form_builder_label_container col-md-12 epl_form_builder_label_container_hidden">
+							</span>
+							<input type="hidden" name="epl_form_builder_form_action" value="epl_form_builder_contact_capture_form" class="epl_form_builder_field col-md-12 epl_form_builder_field_hidden" id="epl_form_builder_form_action" />
+							</div>
+							</form>
+            </div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+	</div>
+</article>
+</main>
+</div>
+</div>
+</div>

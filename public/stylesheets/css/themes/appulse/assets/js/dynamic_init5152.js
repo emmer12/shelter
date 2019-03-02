@@ -1,0 +1,1 @@
+(function($){"use strict";if($.isFunction($.fn.mixItUp)){$('.portfolio-list').mixItUp({animation:{duration:800}});}}(jQuery));

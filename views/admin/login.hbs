@@ -1,0 +1,40 @@
+<style media="screen">
+  .admin-login{
+    border-left: 3px solid green;
+    margin-bottom:50px;
+
+  }
+  .admin-login input{
+     width: 100%;
+     border-radius: 3px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+  <div class="card col-lg-5 col-lg-offset-4 admin-login">
+    <div class="card-block">
+      <h4 class="card-title">Admin Login</h4>
+      {{#if hasError}}
+       <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{error}}
+      </div>
+      {{/if}}
+      <form class="" action="/admin/login" method="post">
+        <div class="">
+          <label for="">Username</label><br>
+          <input type="text" name="username" value="">
+        </div><br>
+        <div class="">
+          <label for="">Password</label><br>
+          <input type="password" name="password" value="">
+        </div>
+        <button type="submit" class="btn btn-success">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

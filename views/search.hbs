@@ -1,0 +1,99 @@
+
+  <div class="container">
+    <h3 class="section-title text-default margin-bottom-medium margin-top-no-margin title-color-dark">SEARCH PROPERTIES</h3>
+   <div class="epl-search-forms-wrapper epl-search-wide">
+  <div class="epl-search-form epl-sb-current" id="epl_ps_tab_1">
+  <form method="get" action="/search">
+  <input type="hidden" name="action" value="epl_search" />
+  <input type="hidden" class="in-field field-width" name="post_type" id="post_type" value="property" />
+  <input type="hidden" class="in-field field-width" name="property_status" id="property_status" value="" />
+  <div class="epl-search-row epl-search-row-select epl-property_location fm-block epl-search-row-half">
+  <label for="property_location" class="epl-search-label fm-label">
+  Type </label>
+  <div class="field">
+  <select name="property_type" id="property_location" class="in-field field-width">
+  <option value="">Any</option>
+  <option value="self contain">Self Contain</option>
+  <option value="Flat">Flat</option>one-room-apartment
+  <option value="Hall">Hall</option>
+  <option value="one-room-apartment">One Room Apartment</option>
+  <option value="two-room-apartment">Two Room Apartment</option>
+  <option value="three-room-apartment">Three Room Apartment</option>
+  <option value="shops">Shops</option><option value="28">Vacant Land</option>
+  </select>
+  </div>
+  </div>
+  <div class="epl-search-row epl-search-row-select epl-property_address_state fm-block ">
+  <label for="property_address_state" class="epl-search-label fm-label">
+  State </label>
+  <div class="field">
+  <select name="property_address_state" id="property_address_state" class="in-field field-width">
+  <option value="">
+  Any </option>
+   {{> states}}
+  </select>
+  </div>
+  </div>
+  <div class="epl-search-row epl-search-row-select epl-property_price_from fm-block ">
+  <label for="property_price_from" class="epl-search-label fm-label">
+  Price Range </label>
+  <div class="field">
+  	<input class="price-txt"  name="range" type="text" id="amount">
+    <div id="slider-range"></div>
+  </div>
+  </div>
+  <div class="epl-search-submit-row epl-search-submit property-type-search">
+  <input type="submit" value="Search" class="l-search-btn" />
+  </div>
+  </form>
+  </div>
+  </div>
+  <div class="">
+    <h4 class="widget-title">Search Result</h4>
+    <div class="alert alert-info" role="alert">
+      ({{count}}) Item found
+    </div>
+  </div>
+  <div class="row">
+     {{#each search_result}}
+      <div class="property-listings property-listings-type-grid ">
+  		<div class="property-item single-property-item col-lg-4 col-md-4 col-sm-6 col-xs-12 post-117 property type-property status-publish has-post-thumbnail hentry location-residential-properties epl-status-current" >
+  		<div class="property-main">
+  		<div class="property-wrap">
+  		<div class="property-item">
+  		<figure class="item-thumb">
+  		<a class="hover-effect" href="property/{{ id }}">
+  		<img src="/uploads/images/{{ property_images.[0] }}" class="img-responsive pro-image" alt="" srcset=""  /> </a>
+  		<div class="label-inner"><span class="label-status label">exclusive</span></div>
+  		<div class="price">
+  		<span class="item-sub-price">&#x20A6;{{ property_price }}</span> </div>
+      {{#if special_product }}
+      <ul class="actions"><li><span class="" style="font-size:20px;color:green; border-radius:100%">
+      <i class="fa fa-check-circle" aria-hidden="true">
+      </i></span></li></ul>
+      {{/if}}
+  		</figure>
+  		<div class="item-body">
+  		<h3 class="property-title"><a href="property/parc-riviera-review/index.html">{{ property_category }}</a></h3>
+  		<div class="adderess"><i class="icon-location-pin"></i>{{ property_location }}</div>
+  		<div class="info">
+  		<p>
+  		 {{# each property_features }}
+  		<button class='btn btn-default btn-sm' style='color:green'> {{this}} </button>
+     {{/ each }}
+ 		</p>
+ 		<p>House</p> </div>
+ 		</div>
+ 		</div>
+ 		</div>
+ 		<div class="item-foot date hide-on-list">
+ 	<div class="pull-left"><span class="prop-user-agent"><i class="icon-user"></i> <a href="/agent/{{property_agent_id.[0].id}}">
+ 	{{property_agent_id.[0].username}}</a></span></div> <div class="pull-right"><span class="prop-date"><i class="icon-calendar"></i>
+ 	{{ created_at }}</span></div> </div>
+ 		</div>
+ 		</div>
+ 		{{/ each }}
+  </div>
+</div>
+</div>
+{{> pagination }}

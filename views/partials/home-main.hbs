@@ -1,0 +1,310 @@
+<section class="">
+<div class="xt-kc-row-container  container"><div class="kc-wrap-columns clearfix">
+<div class="kc-elm kc-css-463532 kc_col-sm-12 kc_column kc_col-sm-12">
+<div class="kc-col-container">
+  <h3 class="">SEARCH PROPERTIES</h3>
+ <div class="epl-search-forms-wrapper epl-search-wide">
+<div class="epl-search-form epl-sb-current" id="epl_ps_tab_1">
+<form method="get" action="/search">
+<input type="hidden" name="action" value="epl_search" />
+<input type="hidden" class="in-field field-width" name="post_type" id="post_type" value="property" />
+<input type="hidden" class="in-field field-width" name="property_status" id="property_status" value="" />
+<div class="epl-search-row epl-search-row-select epl-property_location fm-block epl-search-row-half">
+<label for="property_location" class="epl-search-label fm-label">
+Type </label>
+<div class="field">
+<select name="property_type" id="property_location" class="in-field field-width">
+<option value="">Any</option>
+<option value="self contain">Self Contain</option>
+<option value="Flat">Flat</option>one-room-apartment
+<option value="Hall">Hall</option>
+<option value="one-room-apartment">One Room Apartment</option>
+<option value="two-room-apartment">Two Room Apartment</option>
+<option value="three-room-apartment">Three Room Apartment</option>
+<option value="shops">Shops</option><option value="28">Vacant Land</option>
+</select>
+</div>
+</div>
+<div class="epl-search-row epl-search-row-select epl-property_address_state fm-block epl-search-row-half">
+<label for="property_address_state" class="epl-search-label fm-label">
+State </label>
+<div class="field">
+<select name="property_address_state" id="property_address_state" class="in-field field-width">
+<option value="">
+Any </option>
+ {{> states}}
+</select>
+</div>
+</div>
+<div class="epl-search-row epl-search-row-select epl-property_price_from fm-block epl-search-row-half">
+<label for="property_price_from" class="epl-search-label fm-label">
+Price Range </label>
+<div class="field">
+	<input class="price-txt"  name="range" type="text" id="amount">
+  <div id="slider-range"></div>
+</div>
+</div>
+<div class="epl-search-submit-row epl-search-submit property-type-search">
+<input type="submit" value="Search" class="l-search-btn" />
+</div>
+</form>
+</div>
+</div>
+<!-- ====== Category Menu ====== -->
+
+<div class="category-menu margin-less-top">
+		<div class="container-fluid pd-zero">
+				<div class="row">
+						<div class="col-md-12 col-sm-6">
+								<div class="category-menu-content">
+										<div class="category-title">
+												<h3><span>We Provide</span></h3>
+										</div><!-- /.category-titel -->
+`										<div class="owl-carousel owl-theme" style="display:bloc">
+`									    <div class="item"><h4>1</h4></div>
+									    <div class="item"><h4>2</h4></div>
+									    <div class="item"><h4>3</h4></div>
+									    <div class="item"><h4>4</h4></div>
+									    <div class="item"><h4>5</h4></div>
+									    <div class="item"><h4>6</h4></div>
+									    <div class="item"><h4>7</h4></div>
+									    <div class="item"><h4>8</h4></div>
+									    <div class="item"><h4>9</h4></div>
+									    <div class="item"><h4>10</h4></div>
+									    <div class="item"><h4>11</h4></div>
+									    <div class="item"><h4>12</h4></div>
+                  </div>
+								</div><!-- /.category-menu-content -->
+						</div> <!-- category-menu -->
+				</div><!-- /.col-md-12 -->
+		</div><!-- /.row -->
+</div><!-- /.catagory-menu -->
+<style media="screen">
+.category{
+	background: #4caf50;
+	width: 200px;
+	text-align: center;
+	color: white;
+	border: 2px solid white;
+	cursor: pointer;
+}
+.item-body{
+	margin: 0px;
+
+}
+</style>
+<div class="property-listings property-listings-type-slider owl-carousel owl-theme" data-autoplay=true data-loop=true data-items=6 data-desktopsmall=3 data-tablet=2 data-mobile=1 data-navigation=true data-pagination=false data-direction=false>
+<a href="/property/category/self contain">
+	<div class="category">
+		<div class="item-body">
+			SELF CONTAIN
+		</div>
+	</div>
+</a>
+<a href="/property/category/one-room-apartment ">
+	<div class="category">
+		<div class="item-body">
+			ONE ROOM APARTMENT
+		</div>
+	</div>
+</a>
+<a href="/property/category/two-room-apartment ">
+	<div class="category">
+		<div class="item-body">
+			TWO ROOM APARTMENT
+		</div>
+	</div>
+</a>
+<a href="/property/category/three-room-apartment ">
+	<div class="category">
+		<div class="item-body">
+			THREE ROOM APART...
+		</div>
+	</div>
+</a>
+	<a href="/property/category/flat">
+	<div class="category">
+		<div class="item-body">
+			FLAT
+		</div>
+	</div>
+	</a>
+	<a href="/property/category/hall">
+	<div class="category">
+		<div class="item-body">
+			HALL
+		</div>
+	</div>
+</a>
+<a href="/property/category/shop">
+	<div class="category">
+		<div class="item-body">
+			SHOP RENT
+		</div>
+	</div>
+</a>
+</div>
+</div></div></div></div></section>
+<section class="kc-elm kc-css-114084 kc_row xt_kc_row_has_container xt_kc_row_has_padding"><div class="xt-kc-row-container  container"><div class="kc-wrap-columns clearfix"><div class="kc-elm kc-css-262412 kc_col-sm-12 kc_column kc_col-sm-12">
+	<div class="kc-col-container">
+		<h3 class="section-title text-default margin-bottom-medium margin-top-no-margin title-color-dark">LATEST IN SALES</h3>
+<style>
+  .pro-image{
+  width:100%;
+  height:250px;
+  }
+
+</style>
+{{# each special_property }}
+		<div class="property-listings property-listings-type-grid ">
+		<div class="property-item single-property-item col-lg-4 col-md-4 col-sm-6 col-xs-12 post-117 property type-property status-publish has-post-thumbnail hentry location-residential-properties epl-status-current" >
+		<div class="property-main">
+		<div class="property-wrap">
+		<div class="property-item">
+		<figure class="item-thumb">
+		<a class="hover-effect" href="property/{{ id }}">
+		<img src="/uploads/images/{{ property_images.[0] }}" class="img-responsive pro-image" alt="" srcset=""  /> </a>
+		<div class="label-inner"><span class="label-status label">exclusive</span></div>
+		<div class="price">
+		<span class="item-sub-price">&#x20A6;{{ property_price }}</span> </div>
+		<ul class="actions"><li><span style="font-size:20px;color:green; border-radius:100%"><i class="fa fa fa-check-circle" aria-hidden="true"></i></span></li></ul>
+		</figure>
+		<div class="item-body">
+		<h3 class="property-title"><a href="property/parc-riviera-review/index.html">{{ property_category }}</a></h3>
+		<div class="adderess"><i class="icon-location-pin"></i>{{ property_location }}</div>
+		<div class="info">
+		<p>
+		 {{# each property_features }}
+		<button class='btn btn-default btn-sm' style='color:green'> {{this}} </button>
+		{{/ each }}
+		</p>
+		<p>House</p> </div>
+		</div>
+		</div>
+		</div>
+		<div class="item-foot date hide-on-list">
+	<div class="pull-left"><span class="prop-user-agent"><i class="icon-user"></i> <a href="/agent/{{property_agent_id.[0].id}}">
+	{{property_agent_id.[0].username}}</a></span></div> <div class="pull-right"><span class="prop-date"><i class="icon-calendar"></i>
+	{{ created_at }}</span></div> </div>
+		</div>
+		</div>
+		{{/ each }}
+		{{#if property}}
+
+	{{# each property }}
+			<div class="property-listings property-listings-type-grid ">
+			<div class="property-item single-property-item col-lg-4 col-md-4 col-sm-6 col-xs-12 post-117 property type-property status-publish has-post-thumbnail hentry location-residential-properties epl-status-current" >
+			<div class="property-main">
+			<div class="property-wrap">
+			<div class="property-item">
+			<figure class="item-thumb">
+			<a class="hover-effect" href="property/{{ id }}">
+			<img src="/uploads/images/{{ property_images.[0] }}" class="img-responsive pro-image" alt="" srcset=""  /> </a>
+			<div class="label-inner"><span class="label-status label">exclusive</span></div>
+			<div class="price">
+			<span class="item-sub-price">&#x20A6;{{ property_price }}</span> </div>
+				{{#if special_product }}
+				<ul class="actions"><li><span class="" style="font-size:20px;color:green; border-radius:100%">
+				<i class="fa fa-check-circle" aria-hidden="true">
+				</i></span></li></ul>
+				{{/if}}
+			</figure>
+			<div class="item-body">
+			<h3 class="property-title"><a href="property/parc-riviera-review/index.html">{{ property_category }}</a></h3>
+			<div class="adderess"><i class="icon-location-pin"></i>{{ property_location }}</div>
+			<div class="info">
+			<p>
+			 {{# each property_features }}
+			<button class='btn btn-default btn-sm' style='color:green'> {{this}} </button>
+			{{/ each }}
+			</p>
+			<p>House</p> </div>
+			</div>
+			</div>
+			</div>
+			<div class="item-foot date hide-on-list">
+		<div class="pull-left"><span class="prop-user-agent"><i class="icon-user"></i> <a href="/agent/{{property_agent_id.[0].id}}">
+		{{property_agent_id.[0].company}}</a></span></div> <div class="pull-right"><span class="prop-date"><i class="icon-calendar"></i>
+		{{ created_at }}</span></div> </div>
+			</div>
+			</div>
+		  {{/ each }}
+			{{else}}
+			  <div class="alert alert-warning" role="alert">
+			    No available property
+			  </div>
+			{{/if}}
+<div class="kc-elm kc-css-783757">
+<a class="kc_button xt-theme-primary-btn btn btn-common" href="/property" target="_self" title="" onclick="">
+See All	</a>
+<br>
+<br>
+<br>
+<div class="land-display">
+	<div class="container">
+		<div class="row">
+				{{#each land}}
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<a href="/land/{{id}}" >
+					<div class="land-display" data-hover="land">
+						<h4>{{ land_title }}</h4>
+						<p><i class="icon-location-pin"></i>{{land_location}}</p>
+						<div class="">
+							<i class="icon-user"></i> <a href="/agent/">Admin</a><span></span>
+							<span style="font-size:20px;color:green; border-radius:100%"><i class="fa fa fa-check-circle" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</a>
+			  </div>
+				{{/each}}
+
+		</div>
+	</div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+
+
+<section class="kc-elm kc-css-376550 kc_row xt_kc_row_has_container xt_kc_row_has_padding"><div class="xt-kc-row-container  container"><div class="kc-wrap-columns clearfix"><div class="kc-elm kc-css-532596 kc_col-sm-6 kc_column kc_col-sm-6"><div class="kc-col-container"><h3 class="section-title text-default margin-bottom-medium margin-top-no-margin title-color-dark section-title-x-large">Property Highlights</h3><div class="kc-elm kc-css-85109 kc_text_block"><p>Extensive upgrades and thorough maintenance have kept this home in prime condition. Hardwood floors and new carpets create a very comfortable living space.</p>
+</div><div class="kc-elm kc-css-885280 kc_row kc_row_inner"><div class="kc-elm kc-css-702747 kc_col-sm-6 kc_column_inner kc_col-sm-6"><div class="kc_wrapper kc-col-inner-container">
+<div class="features-box">
+<div class="features-icon"><i class="sl-map"></i></div> <div class="features-content"><h4>Quiet Neighbourhood</h4><p>Enjoy tranquil and relaxed atmosphere of the place</p></div> </div>
+<div class="features-box">
+<div class="features-icon"><i class="sl-hourglass"></i></div> <div class="features-content"><h4> Fabulous views</h4><p>Get yourself surrounded by the stunning view opening</p></div> </div>
+</div></div><div class="kc-elm kc-css-721880 kc_col-sm-6 kc_column_inner kc_col-sm-6"><div class="kc_wrapper kc-col-inner-container">
+<div class="features-box">
+<div class="features-icon"><i class="sl-settings"></i></div> <div class="features-content"><h4>Great local community</h4><p>You will be delighted by the fantastic local community</p></div> </div>
+<div class="features-box">
+<div class="features-icon"><i class="sl-layers"></i></div> <div class="features-content"><h4>Large play center in yard</h4><p>Your kids will be happy having all these things around</p></div> </div>
+</div></div></div>
+<div class="kc-elm kc-css-598498">
+<a class="kc_button xt-theme-primary-btn btn btn-common" href="property/index.html" target="_self" title="" onclick="">
+Book Now</a>
+</div>
+</div></div><div class="kc-elm kc-css-190634 kc_col-sm-6 kc_column kc_col-sm-6"><div class="kc-col-container">
+<div class="simple-image-carouel owl-carousel owl-theme" data-autoplay=true data-loop=true data-items=1undefined data-desktopsmall=1undefined data-tablet=1undefined data-mobile=1 data-navigation=true data-pagination=false data-direction=false>
+<div class="items">
+<img src="/uploads/images/img3.jpg">
+</div>
+<div class="items">
+<img src="/uploads/images/img2.jpg">
+</div>
+<div class="items">
+<img src="/uploads/images/img1.jpg">
+</div>
+</div>
+</div></div></div></div></section>
+<section class="kc-elm kc-css-697437 kc_row xt_kc_row_has_container xt_kc_row_has_padding">
+</section> </div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<script>
+   var word=['a','b','c','d','f'];
+   var index=word.indexOf('f')
+   var slices=word.slice(1,4+1);
+   //alert(slices)
+</script>

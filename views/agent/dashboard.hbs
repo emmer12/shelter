@@ -1,0 +1,354 @@
+<style media="screen">
+  .dropzone{
+    background:#f5f5f5
+  }
+  #common,#common_price{
+    cursor:text;
+    font-size: 16px;
+    width: 80%;
+  }
+  #common_price{
+    width: 40%;
+    float: left;
+  }
+  .account-tab-stap .actives{
+  background: green;
+  }
+  .account-tab-stap .actives a,.account-tab-stap .actives i{
+    color: antiquewhite
+  }
+
+  @media only screen and (max-width: 600px){
+  #common{
+    border-radius: 10px;
+    cursor:text;
+    font-size: 16px;
+    width:100%;
+
+  }
+  #common_price{
+    width:50%;
+  }
+
+  }
+
+</style>
+
+{{> messages }}
+
+{{#if msg}}
+  {{this}}
+{{/if}}
+<div class="">
+  <div class="row">
+     <div class="col-lg-3">
+       <div class="account-tab-inner div-menu">
+         <ul class="account-tab-stap">
+           <li id="step1" class="actives"> <a href="javascript:void(0)">Post Property<i style="position:absolute;right:50px;font-size:20px;font-weight:bolder" class="fa fa-angle-right"></i> </a> </li>
+           <li id="step5"> <a href="javascript:void(0)">Post land<i style="position:absolute;right:50px;font-size:20px;font-weight:bolder" class="fa fa-angle-right"></i> </a> </li>
+           <li id="step2"> <a href="javascript:void(0)">Achived Post<i style="position:absolute;right:50px;font-size:20px;font-weight:bolder"  class="fa fa-angle-right"></i> </a> </li>
+           <li id="step3"> <a href="javascript:void(0)">Settings<i style="position:absolute;right:50px;font-size:20px;font-weight:bolder" class="fa fa-angle-right"></i> </a> </li>
+           <li id="step4"> <a href="javascript:void(0)">Account Information<i style="position:absolute;right:50px;font-size:20px;font-weight:bolder" class="fa fa-angle-right"></i> </a> </li>
+         </ul>
+       </div>
+     </div>
+  <div class="col-lg-6 col-md-8">
+    <div id="data-step1" class="account-content" data-temp="tabdata">
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="heading-part heading-bg mb-30">
+            <h4 class="heading m-0">Post Property</h4>
+            <div class="post_count">
+               <h5>
+                 {{properties.length}}/{{agent.diskSpace}}
+               </h5>
+            </div>
+            {{#if isMemory}}
+            <div class="alert alert-danger " style="display:none" id="error_ms" role="alert"></div>
+            <form class="post-prop-form" id="post-property" action="/agent/property" method="post" enctype="multipart/form-data">
+              <div class="form-g">
+                <label for="title">Property Title </label><br>
+                <input  type="text" id="common" name="property_title" placeholder="Title" value="" class="form-control" required ><br>
+              </div>
+              <div class="form-g">
+                <label for="details">Property Details</label><br>
+                <textarea name="property_details" class="form-control" id="common" rows="5" placeholder="Details" cols="50" required></textarea>
+              </div><br>
+              <div class="form-g">
+                <label for="Features">Property Features</label>
+                <span style="color:green;font-weight:700;font-size:12px">[Please separate each feasures bith cumma example(pool,lawn,toilet,mordern toilet]</span>
+                    <input  type="text"  name="property_features" id="common" class="form-control required" placeholder="lawn,toilet,swimming pool..."><br>
+               </div><br>
+                  <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                    <label for="property_bedrooms_max" class="epl-search-label fm-label">Property Location</label>
+                    <div class="field">
+                      <select name="property_location" required  class="form-control in-field field-width">
+                        <option value="" >Choose Property Lacation</option>
+                        {{> states }}
+                      </select>
+                    </div>
+                  </div>
+                  <br><br>
+                  <div class="form-g">
+                    <label for="location">Property Address</label><br>
+                    <input type="text" class="form-control" required name="property_address" placeholder="Address" id="common" >
+                  </div>
+                  <input class="common form-control" type="hidden" id="common" name="property_agent_id"  value="{{agent.id}}">
+                  <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                    <label for="property_bedrooms_max" class="epl-search-label fm-label">Select Category</label>
+                    <div class="field">
+                      <select name="property_category" required  class="form-control in-field field-width">
+                        <option value="" class="disabled">Choose Category</option>
+                        <option value="self contain">Self Contain</option>
+                        <option value="Flat">Flat</option>one-room-apartment
+                        <option value="Hall">Hall</option>
+                        <option value="one-room-apartment">One Room Apartment</option>
+                        <option value="two-room-apartment">Two Room Apartment</option>
+                        <option value="three-room-apartment">Three Room Apartment</option>
+                        <option value="shops">Shops</option>
+                      </select>
+                    </div>
+                  </div><br><br>
+                  <div class="form-g">
+                    <label for="price">Property price </label><br>
+                    <input class="common form-control" type="number" required id="common_price" placeholder="Price" name="property_price" value="">
+                  </div>
+                  <div id="common_price" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                    <div class="field">
+                      <select name="property_duration" required  class="form-control in-field field-width">
+                        <option value="" class="disabled">Choose duration</option>
+                        <option value="Month">Per Month</option>
+                        <option value="Year">Per Year</option>
+                        <option value="sale">For Sale</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-g"><br>
+                    <label for="price">Special rating</label><br>
+                    <input class="common form-control" type="number" placeholder="Special rating" id="common" required name="special_rate" value="">
+                  </div>
+                  <input type="hidden" name="special_product" value="false">
+                  <br>
+                  <div class="container-drop">
+                    <div class="row img-field drop-clone">
+                      <label for="price">Please upload at list one image</label><br>
+                      <div class="col-lg-4">
+                        <input  type="file" name="property_images" class="property_image required" value="">
+                      </div>
+                      <div class="col-lg-4">
+                        <input type="file" name="property_images" class="property_image" value="">
+                      </div>
+                      <div class="col-lg-4">
+                        <input type="file" name="property_images" class="property_image" value="">
+                      </div>
+                    </div>
+
+                  </div>
+                  <br>
+                  <div class="center" style="width:70%;">
+                    <button  type="submit" name="submit-all" id="post-prop-sub">POST<span class="fa fa-send"></span></button>
+                  </div>
+                </form>
+              {{else}}
+
+                 <div class="alert alert-danger" role="alert">
+                   Sorry you have reach the limit of your post. Yo can delete some of your post at achived post or
+                   <a href="./subscribe" class="alert-link">
+                     Subscribe for more pro space
+                   </a>.
+                 </div>
+                {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="data-step2" class="account-content" data-temp="tabdata" style="display:none">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-part heading-bg mb-30">
+            <h4 class="heading m-0 center">Achived post</h4>
+            {{#if properties }}
+            <ul class="list-group">
+            {{#each properties}}
+              <li class="list-group-item pro-{{id}}">{{property_title}}<span style="position:absolute;right:20px;cursor:pointer;font-size:20px;" data-id="{{id}}" class="fa fa-trash-o delete_property"></span></li>
+            {{/each}}
+            </ul>
+            {{else}}
+              <div class="alert alert-info" role="alert">
+                No achived post
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="data-step3" class="account-content" data-temp="tabdata" style="display:none">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-part heading-bg mb-30">
+            <h4 class="heading m-0 center">Account Settings</h4>
+             <div class="settings-div card">
+               <form class="" action="/agent/update" method="post" enctype="multipart/form-data">
+                  <div class="default">
+                    <label for="company-logo"><img id="img" src="/uploads/images/{{agent.profile_image}}" alt="" class="img-rounded center-block" style="cursor:pointer"></label>
+                     <input type="file" name="company-logo" id="company-logo" value="" style="display:none" value="{{agent.profile_image}}">
+                  </div>
+                  <input type="hidden" name="agent_id" value="{{agent.id}}">
+                  <div class="">
+                    <label for="">Fullname</label><br>
+                    <input type="text" name="fullname" value="{{agent.fullname}}">
+                  </div>
+                  <div class="">
+                    <label for="">Company Name</label><br>
+                    <input type="text" name="company" value="{{agent.company}}">
+                  </div>
+                  <div class="">
+                    <label for="">Username</label><br>
+                    <input type="text" name="username" value="{{agent.username}}">
+                  </div>
+                  <div class="">
+                    <label for="">Email</label><br>
+                    <input type="email" name="email" value="{{agent.email}}">
+                  </div>
+                  <div class="">
+                    <label for="">Phone Number</label><br>
+                    <input type="text" name="phone_number" value="0{{agent.phone_number}}">
+                  </div>
+                  <div class="">
+                    <label for="">Location</label><br>
+                    <input type="text" name="location" value="{{agent.location}}">
+                  </div>
+                  <br>
+                  <button type="submit" name="button"  id="post-prop-sub">Update</button>
+               </form>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="data-step4" class="account-content" data-temp="tabdata" style="display:none">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-part heading-bg mb-30">
+            <h4 class="heading m-0 center">Account Information</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="data-step5" class="account-content" data-temp="tabdata" style="display:none">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-part heading-bg mb-30">
+            <h4 class="heading m-0 center">Post Land</h4>
+            <div class="container settings-div card" style="background:#eee">
+            <form class="" action="/land" method="post">
+              <div class="">
+                <label for="land_title">Title</label><br>
+                <input type="text" name="land_title" class="land_title" id="common" placeholder="Title" value="">
+              </div>
+              <div class="">
+                <label for="land_discription">Discription</label><br>
+                <textarea name="land_discription" class="land_discription" placeholder="Discription" id="common" rows="4" cols="20"></textarea>
+              </div>
+              <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                <label for="property_bedrooms_max" class="epl-search-label fm-label">Property Location</label>
+                <div class="field">
+                  <select name="land_location" required id="land_location" class="in-field field-width land_location">
+                    <option value="" >Choose Land Lacation</option>
+                    {{> states }}
+                  </select>
+                </div>
+              </div>
+              <div class="">
+                <label for="land_details">Land Location Details</label><br>
+                <input type="text" name="location_details" class="location_details" id="common" placeholder="Land location details" value="">
+              </div>
+              <div class="price-land" >
+                <label for="land_price">Price</label><br>
+                <input type="number" name="land_price" class="land_price" placeholder="Price" id="common_price" value="">
+              </div>
+              <div id="common_price"  class=" epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                <div class="field">
+                  <select name="land_area" required  id="land_area"  class="land_area in-field field-width">
+                    <option value="" class="disabled">Choose duration</option>
+                    <option value="per plot">Per Plot</option>
+                    <option value="per hectar">Per Hectar</option>
+                    <option value="per acre">For Acre</option>
+                  </select>
+                </div>
+              </div>
+              <input class="common property_agent_id" type="hidden" id="common" name="property_agent_id" value="{{agent.id}}">
+              <br>
+              <br>
+              <br>
+              <div class="">
+                <button type="submit" name="submit-land" class="post-land" id="post-prop-sub">POST<span class="fa fa-send"></span></button>
+              </div>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+function custom_tab() {
+/* ------------ Account Tab JS Start ------------ */
+$('.account-tab-stap').on('click', 'li', function() {
+    $('.account-tab-stap li').removeClass('actives');
+    $(this).addClass('actives');
+
+    $(".account-content").fadeOut();
+    var currentLiID = $(this).attr('id');
+    $("#data-"+currentLiID).fadeIn();
+    return false;
+});
+/* ------------ Account Tab JS End ------------ */
+}
+$(document).ready(function() {
+  custom_tab();
+/**
+ *
+  $(".delete_property").click(function () {
+    var id=$(this).attr("data-id");
+    var warning=confirm("Are Sure You Want To Delete The Selected Item");
+    if (warning==true) {
+      $.ajax({
+        method:'delete',
+        url:'/property/delete',
+        data:{'id':id},
+        success:function(data) {
+          $('.pro-'+data.data).css({'backgroundColor':'#ccc','border':'1px solid white'});
+          setTimeout(function() {
+            $('.pro-'+data.data).fadeOut(1200);
+            $('.custum-msg-info').addClass("animated fadeInRight").fadeIn().text("property was removed successfully")
+          },200)
+          setTimeout(function() {
+            $('.custum-msg-info').removeClass("animated fadeInRight")
+            $('.custum-msg-info').addClass("animated fadeOutRight")
+          },7000)
+        }
+      })
+    }
+    else {
+      return
+    }
+    })
+    */
+
+    $("#company-logo").change(function(event) {
+       var file=event.target.files[0];
+      var fileObj=URL.createObjectURL(file);
+      $("#img").prop("src",fileObj);
+      $("#img").fadeIn(2000);
+    })
+})
+</script>

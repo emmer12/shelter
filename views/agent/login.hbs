@@ -1,0 +1,64 @@
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">Log In</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../index.html" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">Log In</span><meta itemprop="position" content="2" /></li></ul></div></nav> </div>
+</div>
+</div>
+
+<div id="content" class="site-content container">
+<div class="appulse-main-content-inner">
+<div id="primary" class="content-area tml-content-area col-md-6 col-md-offset-3">
+<main id="main" class="site-main">
+<article id="post-6" class="post-6 page type-page status-publish hentry no-feature-image">
+<div class="entry-content">
+<div class="tml tml-login" id="theme-my-login">
+
+<form name="login_user" id="loginform" action="/agent/login" method="post">
+       <div class="form-header">
+          <h4>Login </h4>
+       </div>
+       {{#if hasError }}
+          {{# each error }}
+             <div class="alert alert-danger alert-dismissible fade in" role="alert">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+               {{this}}
+             </div>
+           {{/each}}
+       {{/if}}
+      <p class="tml-user-login-wrap">
+      <label for="user_login">Username</label>
+      <input type="text" name="username" placeholder="Email" id="user_login" class="input" value="" size="20" />
+      </p>
+      <p class="tml-user-pass-wrap">
+      <label for="user_pass">Password</label>
+      <input type="password" name="password" id="user_pass" placeholder="*******" class="input" value="" size="20" autocomplete="off" />
+      </p>
+      <div class="tml-rememberme-submit-wrap">
+      <p class="tml-rememberme-wrap">
+      <input name="rememberme" type="checkbox" id="rememberme" value="forever" />
+      <label for="rememberme">Remember Me</label>
+      </p>
+      <p class="tml-submit-wrap">
+      <input type="submit" name="login_user" id="wp-submit" value="Log In" />
+      <input type="hidden" name="instance" value="" />
+      <input type="hidden" name="action" value="login" />
+      </p>
+      </div>
+</form>
+<ul class="tml-action-links">
+<li><a href="../lostpassword/index.html" rel="nofollow">Lost Password</a></li>
+</ul>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>

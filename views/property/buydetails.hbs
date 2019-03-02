@@ -1,0 +1,28 @@
+{{#if property}}
+<div class="container">
+	<div class="card row">
+		<div class="card-con col-lg-6 col-lg-offset-3">
+			<h4 class="card-title">Land details</h4>
+			<div class="card-details">
+				<ul class="list-group">
+					<li class="list-group-item"><b>property Title |::</b> {{ property.property_title }}</li>
+					<li class="list-group-item"><b>Price |::</b> &#x20A6;{{ property.property_price }} {{property.property_area}}</li>
+					<li class="list-group-item"><b>property Location City |::</b> {{ property.property_location }}</li>
+					<li class="list-group-item"><b>property Location Details |::</b> {{ property.property_address }}</li>
+				</ul>
+				<div class="pay-action">
+					<a href="/" class="btn btn-success btn-sm">Pay Now</a> <a href="/property/buy/request/{{property.id}}" class="btn btn-success btn-sm">Pay after Viewing</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  {{else}}
+
+	<div class="alert alert-warning" role="alert">
+	  <p>No items found</p>
+	  <a href="/" class="btn btn-success">Back To home page</a>
+	</div>
+{{/if}}
+
+<br><br>

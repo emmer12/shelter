@@ -1,0 +1,109 @@
+<style media="screen">
+    .dropzone{
+      background:#f5f5f5
+    }
+      #common,#common_price{
+        border-radius: 10px;
+        cursor:text;
+        font-size: 16px;
+        width: 80%;
+        //border: 2px solid grey;
+      }
+      #common_price{
+        width: 40%;
+        float: left;
+      }
+      .error{
+        border: 2px solid red
+      }
+      .dz-message{
+        border: 2px dashed darkseagreen;
+        cursor: pointer;
+      }
+      @media only screen and (max-width: 600px){
+      #common{
+        border-radius: 10px;
+        cursor:text;
+        font-size: 16px;
+        width:100%;
+
+      }
+      #common_price{
+        width:50%;
+      }
+      .dropzone{
+        margin:0px;
+      }
+
+      }
+
+    </style>
+{{> messages }}
+<div class="dashboard-container">
+  <div class="sidebar-admin">
+    <span id='admin-bar-close' class="fa fa-times pull-right" ></span>
+    <div class="sidebar-items">
+      <ul>
+        <li> <a href="./requests">Requests  <span class="pull-right">5</span></a></li>
+        <li> <a href="./post-property">Post Property  </a></li>
+        <li class="active-admin-nav"> <a href="./post-land">Post Land  </a></li>
+        <li> <a href="./allagents">Agents<span class="pull-right">5</span></a></li>
+        <li> <a href="./prop-info">Properties Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./land-info">Lands Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./settings">Settings</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="dashboard-content pull-right">
+     <div class="">
+       <h4>POST LAND</h4>
+       <form class="" action="/land" method="post">
+         <div class="">
+           <label for="land_title">Title</label><br>
+           <input type="text" name="land_title" class="land_title" id="common" placeholder="Title" value="">
+         </div>
+         <div class="">
+           <label for="land_discription">Discription</label><br>
+           <textarea name="land_discription" class="land_discription" placeholder="Discription" id="common" rows="4" cols="20"></textarea>
+         </div>
+         <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+           <label for="property_bedrooms_max" class="epl-search-label fm-label">Property Location</label>
+           <div class="field">
+             <select name="land_location" required id="land_location" class="in-field field-width land_location">
+               <option value="" >Choose Land Lacation</option>
+               {{> states }}
+             </select>
+           </div>
+         </div>
+         <div class="">
+           <label for="land_details">Land Location Details</label><br>
+           <input type="text" name="location_details" class="location_details" id="common" placeholder="Land location details" value="">
+         </div>
+         <div class="" >
+           <label for="land_price">Price</label><br>
+           <input type="number" name="land_price" class="land_price" placeholder="Price" id="common_price" value="">
+         </div>
+         <div id="common_price"  class=" epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+           <div class="field">
+             <select name="land_area" required  id="land_area"  class="land_area in-field field-width">
+               <option value="" class="disabled">Choose duration</option>
+               <option value="per plot">Per Plot</option>
+               <option value="per hectar">Per Hectar</option>
+               <option value="per acre">For Acre</option>
+             </select>
+           </div>
+         </div>
+         <input class="common property_agent_id" type="hidden" id="common" name="property_agent_id" value="{{agent.id}}">
+         <br>
+         <br>
+         <br>
+         <div class="">
+           <button type="submit" name="submit-land" class="post-land" id="post-prop-sub">POST<span class="fa fa-send"></span></button>
+         </div>
+       </form>
+     </div>
+  </div>
+
+</div>
+<div class="overlay"></div>

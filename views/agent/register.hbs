@@ -1,0 +1,84 @@
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">Register</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../index.html" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">Register</span><meta itemprop="position" content="2" /></li></ul></div></nav> </div>
+</div>
+</div>
+<div class="container">
+  <div class="redister-form-con">
+    <div class="row">
+      <div class="col-lg-6 col-md-7 col-lg-offset-3 col-md-offset-3 sub-main">
+        <form  id='register' action="#" method="post">
+          <div class="loader"></div>
+          <div class="overlay"></div>
+          <div class="form-header ">
+            <h4>Register Now to start posting</h4>
+          </div>
+          <div class="alert alert-danger error-msg"></div>
+          <fieldset>
+            <div class="form-cus form-g">
+              <label for="firstname">Firstname</label>
+              <input type="text" name="firstname" value=""  placeholder="firstname" class="firstname" id='firstname'>
+            </div>
+            <div class="form-cus form-g">
+              <label for="lastname">Lastname</label>
+              <input type="text" name="lastname" value=""  placeholder="lastname" class="lastname" id='lastname'>
+            </div>
+            <div class="form-cus">
+              <label for="company">Company</label>
+              <input type="text" id='company' name="company" value="" placeholder="company">
+            </div>
+            <div class="form-cus form-g">
+              <label for="userName">Username</label>
+              <input type="text" id='userName' name="username" value="" placeholder="Username" >
+            </div>
+            <div class="form-cus form-g">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" value="" placeholder="Address">
+            <div class="form-cus form-g">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" value="" placeholder="example@mail.com">
+            </div>
+            <div class="form-cus" form-g>
+              <label for="phoneNo">Phone Number</label>
+              <input type="number" id='phoneNo' name="phone_number" value="" placeholder="Phone number">
+            </div>
+            <div class="form-cus form-g">
+              <label for="">Location</label>
+              <div  style="width:80%;margin-left:10%" id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                <div class="field">
+                  <select name="location" required  class="in-field field-width">
+                    <option value="" >Choose Lacation</option>
+                    {{> states }}
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-cus form-g">
+              <label for="password">Password</label>
+              <input type="password" id='password' name="password" value="" placeholder="*******">
+            </div>
+            <div class="form-cus form-g">
+              <label for="c-password">Confirm Password</label>
+              <input type="password" id='c-password' name="confirm_password" value="" placeholder="*******">
+            </div>
+            <div class="form-cus form-g">
+                <label for="terms" >Terms and Condition</label>
+                <input style="left:0px;top:px;position:absolute" name="terms" type="checkbox" id="terms" value="forever" />
+             </div>
+              <span><a style="font-weight:bold;margin-left:40%;line-height:10px;padding:10px" href="login">Already have an account</a></span><br><br>
+              <input type="submit" name="validate" class="register" value="Register">
+            <br>
+            <br>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>

@@ -1,0 +1,99 @@
+{{#if land}}
+
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">Land</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../../index.html" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item"><a href="/land"><span itemprop="name">Lands</span></a><meta itemprop="position" content="2" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">{{land.land_title}}</span><meta itemprop="position" content="3" /></li></ul></div></nav> </div>
+</div>
+</div>
+<br>
+<br>
+<div class='container'>
+	<div class="panel panel-success">
+		 <div class="panel-heading">
+			 <h2>Land details</h2>
+   </div>
+ </div>
+	<div class="row">
+		<div class="col-lg-4 ">
+			   <div class="">
+						<h4>Land Title</h4>
+						  <p> {{ land.land_title }} </p>
+					</div>
+			</div>
+  </div>
+	<div class="row">
+		<div class="col-lg-4">
+						<div>
+							<h4>Land Discription</h4>
+						  <p> {{ land.land_discription }} </p>
+						</div>
+	     </div>
+		 </div>
+	<div class="row">
+		<div class="col-lg-4">
+						<div class="">
+							<h4>Land price</h4>
+						  <p> &#x20A6;{{ land.land_price }}  {{ land.land_area }}</p>
+						</div>
+
+					</div>
+			</div>
+	<div class="row">
+		<div class="col-lg-4">
+						<div class="">
+							<h4>Land Location</h4>
+						  <p> {{ land.land_location }} </p>
+						</div>
+					</div>
+			</div>
+	<div id="epl-box5" class="epl-author-box-container">
+		<a href="/land/buy/{{ land.id }}"  style="background:#4caf50" class="btn btn-default">Buy Now</a>
+		<!--
+		<h5 class="epl-tab-title epl-tab-title-property-author tab-title">About Land Agent</h5>
+		<ul class="epl-author-tabs author-tabs">
+			<div class="epl-author-box-outer-wrapper author-box-outer-wrapper epl-clearfix">
+				<div class="epl-author-box epl-author-image author-box author-image">
+					<img src="/images/default.png" width="150" height="150" alt="{{ property.property_agent_id.[0].fullname}} " class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" /> </div>
+					<div id="tab-1" class="epl-author-author_id epl-author-tab-content epl-author-current epl-author-box author-box">
+						<div class="epl-author-contact-details author-contact-details">
+							<h5 class="epl-author-title author-title">
+								<a href="/agent/{{ property.property_agent_id.[0].id}}">
+									{{ land.land_agent_id.[0].firstname}} {{ land.land_agent_id.[0].lastname}}</a>
+								</h5>
+								<div class="epl-author-position author-position">
+									<span class="label-position"></span>
+									<span class="position">Founder & CEO at {{land.land_agent_id.[0].company}}</span>
+								</div>
+								<div class="epl-author-contact author-contact">
+									<span class="label-mobile"></span>
+									<span class="mobile"> <a href="tel:0{{property.property_agent_id.[0].phone_number}}">0{{land.land_agent_id.[0].phone_number}}</a></span>
+								</div>
+							</div>
+							<div class="epl-author-slogan author-slogan"></div>
+							<div class="epl-clearfix"></div>
+							<div class="epl-author-social-buttons author-social-buttons">
+								<a class="epl-author-icon author-icon email-icon-24" href="../../cdn-cgi/l/email-protection.html#1f756a6c6b66715f7e6f6f6a736c7a317c7072" title="Contact JUSTYN MICHALLEK by Email">Email</a>
+								<a class="epl-author-icon author-icon facebook-icon-24" href="http://facebook.com/#" title="Follow JUSTYN MICHALLEK on Facebook">Facebook</a>
+								<a class="epl-author-icon author-icon twitter-icon-24" href="http://twitter.com/#" title="Follow JUSTYN MICHALLEK on Twitter">Twitter</a>
+								<a class="epl-author-icon author-icon google-icon-24" href="http://{{property.property_agent_id.[0].email}}/#" title="Follow JUSTYN MICHALLEK on Google">Google</a>
+								<a class="epl-author-icon author-icon linkedin-icon-24" href="http://linkedin.com/pub/#" title="Follow JUSTYN MICHALLEK on Linkedin">LinkedIn</a>
+								<a class="epl-author-icon author-icon skype-icon-24" href="skype:#" title="Follow JUSTYN MICHALLEK on Skype">Skype</a></div>
+							</div>
+						</div>
+					</div>
+		-->
+	</div>
+</div>
+
+{{else}}
+ <div class="alert alert-warning" role="alert">
+	 No Land found!
+   <a href="#" class="alert-link">Click here to find one</a>
+ </div>
+{{/if}}

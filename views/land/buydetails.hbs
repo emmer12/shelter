@@ -1,0 +1,29 @@
+{{#if land}}
+<div class="container">
+	<div class="card row">
+		<div class="card-con col-lg-6 col-lg-offset-3">
+			<h4 class="card-title">Land details</h4>
+			<div class="card-details">
+				<ul class="list-group">
+					<li class="list-group-item"><b>land Title |::</b> {{ land.land_title }}</li>
+					<li class="list-group-item"><b>Price |::</b> &#x20A6;{{ land.land_price }} {{land.land_area}}</li>
+					<li class="list-group-item"><b>land Location City |::</b> {{ land.land_location }}</li>
+					<li class="list-group-item"><b>land Location Details |::</b> {{ land.location_details }}</li>
+				</ul>
+				<div class="pay-action">
+					<a href="/" class="btn btn-success btn-sm">Pay Now</a> <a href="/land/buy/request/{{land.id}}" class="btn btn-success btn-sm">Pay after Viewing</a>
+				</div>
+				<p>we are processing your request... we will get back to you soon</p>
+			</div>
+		</div>
+	</div>
+</div>
+  {{else}}
+
+	<div class="alert alert-warning" role="alert">
+	  <p>No items found</p>
+	  <a href="/" class="btn btn-success">Back To home page</a>
+	</div>
+{{/if}}
+
+<br><br>

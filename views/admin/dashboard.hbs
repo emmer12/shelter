@@ -1,0 +1,331 @@
+{{> messages }}
+<div class="dashboard-container">
+  <div class="sidebar-admin">
+    <span id='admin-bar-close' class="fa fa-times pull-right" ></span>
+    <div class="sidebar-items">
+      <ul>
+        <li class="active-admin-nav"> <a href="./dashboard/requests">Requests  <span class="pull-right">5</span></a></li>
+        <li> <a href="./dashboard/post-property">Post Property  </a></li>
+        <li> <a href="./dashboard/post-land">Post Land  </a></li>
+        <li> <a href="./dashboard/allagents">Agents<span class="pull-right">5</span></a></li>
+        <li> <a href="./dashboard/prop-info">Properties Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./dashboard/land-info">Lands Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./dashboard/settings">Settings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="dashboard-content pull-right">
+      hello
+  </div>
+
+</div>
+
+<div class="overlay"></div>
+
+{{!-- <div class="container">
+  <div class="row">
+    <style media="screen">
+    .dropzone{
+      background:#f5f5f5
+    }
+      #common,#common_price{
+        border-radius: 10px;
+        cursor:text;
+        font-size: 16px;
+        width: 80%;
+        //border: 2px solid grey;
+      }
+      #common_price{
+        width: 40%;
+        float: left;
+      }
+      .error{
+        border: 2px solid red
+      }
+      .dz-message{
+        border: 2px dashed darkseagreen;
+        cursor: pointer;
+      }
+      @media only screen and (max-width: 600px){
+      #common{
+        border-radius: 10px;
+        cursor:text;
+        font-size: 16px;
+        width:100%;
+
+      }
+      #common_price{
+        width:50%;
+      }
+      .dropzone{
+        margin:0px;
+      }
+
+      }
+
+    </style>
+
+
+               <div class="col-lg-6">
+                   <div class="panel panel-default">
+                       <div class="panel-heading">
+                         <button type="button" class="btn btn-success">Requests <span class="label label-danger">5</span></button><br>
+                       </div>
+                       <style media="screen">
+                          .ad-nav{
+                            color: #222
+                          }
+                       </style>
+                       <!-- /.panel-heading -->
+                       <div class="panel-body">
+                           <!-- Nav tabs -->
+                           <ul class="nav nav-pills">
+
+                               <a href="#home-pills" data-toggle="tab" class="ad-nav"><button class="btn btn-default active ad-nav ">Post Property</button></a>
+                               <a class="ad-nav" href="#profile-pills" data-toggle="tab" class="ad-nav"><button class="btn btn-default ad-nav">Post Land</button></a>
+                               </li>
+                           </ul>
+
+                           <!-- Tab panes -->
+                           <div class="tab-content">
+                               <div class="tab-pane fade in active" id="home-pills">
+                                   <h4>POST PROPERTY</h4>
+                                   <form class="post-prop-form dropzone" id="my-dropzone" action="/agent/property" method="post" enctype="multipart/form-data">
+                                     <div class="">
+                                       <label for="title">Property Title</label><br>
+                                       <div class="alert alert-danger " style="display:none" id="error_ms" role="alert">
+
+                                       </div>
+                                       <input  type="text" id="common" name="property_title" placeholder="Title" value="" required >
+                                     </div>
+                                     <div class="">
+                                       <label for="details">Property Details</label><br>
+                                       <textarea name="property_details" id="common" rows="5" placeholder="Details" cols="50" required></textarea>
+                                     </div>
+                                     <div class="">
+                                       <label for="Features">Property Features</label>
+                                       <span style="color:green;font-weight:700;font-size:12px">
+                                         [Please separate each feasures bith cumma example(pool,lawn,toilet,mordern toilet)]</span><br>
+                                           <input  type="text" required name="property_features" id="common" placeholder="Features">
+                                         </div>
+                                         <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                                           <label for="property_bedrooms_max" class="epl-search-label fm-label">Property Location</label>
+                                           <div class="field">
+                                             <select name="property_location" required  class="in-field field-width">
+                                               <option value="" >Choose Property Lacation</option>
+                                               {{> states }}
+                                             </select>
+                                           </div>
+                                         </div>
+                                         <div class="">
+                                           <label for="location">Property Address</label><br>
+                                           <input type="text" required name="property_address" placeholder="Address" id="common" rows="8" cols="80">
+                                         </div>
+                                         <input class="common" type="hidden" id="common" name="property_agent_id"
+                                         value="{{agent.id}}">
+                                         <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                                           <label for="property_bedrooms_max" class="epl-search-label fm-label">Select Category</label>
+                                           <div class="field">
+                                             <select name="property_category" required  class="in-field field-width">
+                                               <option value="" class="disabled">Choose Category</option>
+                                               <option value="self contain">Self Contain</option>
+                                               <option value="Flat">Flat</option>one-room-apartment
+                                               <option value="Hall">Hall</option>
+                                               <option value="one-room-apartment">One Room Apartment</option>
+                                               <option value="two-room-apartment">Two Room Apartment</option>
+                                               <option value="three-room-apartment">Three Room Apartment</option>
+                                               <option value="shops">Shops</option>
+                                             </select>
+                                           </div>
+                                         </div>
+                                         <div class="">
+                                           <label for="price">Property price </label><br>
+                                           <input class="common" type="number" required id="common_price" placeholder="Price" name="property_price" value="">
+                                         </div>
+                                         <div id="common_price" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                                           <div class="field">
+                                             <select name="property_duration" required  class="in-field field-width">
+                                               <option value="" class="disabled">Choose duration</option>
+                                               <option value="Month">Per Month</option>
+                                               <option value="Year">Per Year</option>
+                                               <option value="sale">For Sale</option>
+                                             </select>
+                                           </div>
+                                         </div>
+                                         <br>
+                                         <br>
+                                         <div class="">
+                                           <label for="price">Special rating</label><br>
+                                           <input class="common" type="number" placeholder="Special rating" id="common" required name="special_rate" value="">
+                                         </div>
+                                         <input type="hidden" name="special_product" value="true">
+                                         <div class="dz-message" id="common">
+                                           <h3>Drop here to upload.</h3>
+                                           <img style="width:70px;height:70px;cursor:pointer" src="/images/upload-icon.png" class="img-fluid pull-xs-left" alt="..."></label>
+
+                                         </div>
+                                         <div class="fallback" >
+                                           <input name="property_images" class="files" required type="file" multiple />
+                                         </div>
+                                         <br>
+                                         <div class="">
+                                           <button type="submit" name="submit-all" id="post-prop-sub">POST<span class="fa fa-send"></span></button>
+                                         </div>
+                                       </form>
+                               </div>
+                               <div class="tab-pane fade" id="profile-pills">
+                                 <h4>POST LAND</h4>
+                                 <form class="" action="/land" method="post">
+                                   <div class="">
+                                     <label for="land_title">Title</label><br>
+                                     <input type="text" name="land_title" class="land_title" id="common" placeholder="Title" value="">
+                                   </div>
+                                   <div class="">
+                                     <label for="land_discription">Discription</label><br>
+                                     <textarea name="land_discription" class="land_discription" placeholder="Discription" id="common" rows="4" cols="20"></textarea>
+                                   </div>
+                                   <div id="common" class="epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                                     <label for="property_bedrooms_max" class="epl-search-label fm-label">Property Location</label>
+                                     <div class="field">
+                                       <select name="land_location" required id="land_location" class="in-field field-width land_location">
+                                         <option value="" >Choose Land Lacation</option>
+                                         {{> states }}
+                                       </select>
+                                     </div>
+                                   </div>
+                                   <div class="">
+                                     <label for="land_details">Land Location Details</label><br>
+                                     <input type="text" name="location_details" class="location_details" id="common" placeholder="Land location details" value="">
+                                   </div>
+                                   <div class="" >
+                                     <label for="land_price">Price</label><br>
+                                     <input type="number" name="land_price" class="land_price" placeholder="Price" id="common_price" value="">
+                                   </div>
+                                   <div id="common_price"  class=" epl-search-row epl-search-row-select epl-property_bedrooms_max fm-block epl-search-row-half">
+                                     <div class="field">
+                                       <select name="land_area" required  id="land_area"  class="land_area in-field field-width">
+                                         <option value="" class="disabled">Choose duration</option>
+                                         <option value="per plot">Per Plot</option>
+                                         <option value="per hectar">Per Hectar</option>
+                                         <option value="per acre">For Acre</option>
+                                       </select>
+                                     </div>
+                                   </div>
+                                   <input class="common property_agent_id" type="hidden" id="common" name="property_agent_id" value="{{agent.id}}">
+                                   <br>
+                                   <br>
+                                   <br>
+                                   <div class="">
+                                     <button type="submit" name="submit-land" class="post-land" id="post-prop-sub">POST<span class="fa fa-send"></span></button>
+                                   </div>
+                                 </form>
+                               </div>
+                               <div class="tab-pane fade" id="messages-pills">
+                                   <h4>Messages Tab</h4>
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                               </div>
+                               <div class="tab-pane fade" id="settings-pills">
+                                   <h4>Settings Tab</h4>
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                               </div>
+                           </div>
+                       </div>
+                       <!-- /.panel-body -->
+                   </div>
+                   <!-- /.panel -->
+               </div>
+               <hr>
+               <!-- /.col-lg-6 -->
+               <div class="col-lg-6">
+                 <div class="control-con">
+                   <div class="control-list">
+                     <h4>Users/Property Control Panel</h4>
+                 {{#each property}}
+                     <div class="card pro-{{id}}">
+                       <div class="card-block">
+                         <h4 class="card-title"></h4>
+                           <a class="btn btn-default" style="color:#222;min-width:300px;text-align:justify" data-toggle="collapse" href="#collapseExample{{id}}" aria-expanded="false" aria-controls="collapseExample">
+                             {{property_title}} <span class="caret"></span>
+                           </a>
+                         </p>
+                         <div class="collapse" id="collapseExample{{id}}">
+                           <div class="card card-block">
+                              <br>
+                              <b>Details</b><span class="fa fa-angle-double-right "> </span><span>{{property_details}}</span><br><hr>
+                              <b>Category</b><span class="fa fa-angle-double-right "> </span><span>{{property_category}}</span><br><hr>
+                              <b>Features</b><span class="fa fa-angle-double-right "> </span>
+                              {{#each property_features}}
+                                <button type="button" style="color:gray" class="btn btn-default" name="button">{{this}}</button>
+                              {{/each}}<br><hr>
+                              <b>Location</b><span class="fa fa-angle-double-right "> </span><span>{{property_location}}</span><br><hr>
+                              <b>Address</b><span class="fa fa-angle-double-right "> </span><span>{{property_address}}</span><br><hr>
+                              <b>Time</b><span class="fa fa-angle-double-right "> </span><span>{{created_at}}</span><br><hr>
+                               <b>Images</b><br>
+                              {{#each property_images}}
+                                 <img class="ad-pt-img" src="/uploads/images/{{this}}" alt="">
+                              {{/each}}
+                              <hr>
+
+                              <button  style="color:white" class="btn btn-success" data-toggle="modal" data-target="#userInfo{{id}}" >Agent</button>
+                               <div id="userInfo{{id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                 <div class="modal-dialog modal-lg">
+                                   <div class="modal-content">
+                                     <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                       </button>
+                                       <h4 class="modal-title" id="myModalLabel">AGENT INFORMATION</h4>
+                                     </div>
+                                     <div class="modal-body">
+                                       <div class="user-info">
+                                         <div class="" style="text-align:center">
+                                           <img  src="/images/default.png" alt="">
+                                       </div>
+                                         <hr>
+                                         <ul class="list-group">
+                                         <li class="list-group-item">Agent Fullname : {{property_agent_id.[0].fullname}} </li>
+                                         <li class="list-group-item">Agent Username : {{property_agent_id.[0].username}}</li>
+                                         <li class="list-group-item">Agent Company Name : {{property_agent_id.[0].company}}</li>
+                                         <li class="list-group-item">Agent Email Address : {{property_agent_id.[0].email}}</li>
+                                         <li class="list-group-item">Agent Phone Number : {{property_agent_id.[0].phone_number}}</li>
+                                         <li class="list-group-item">Agent Location : {{property_agent_id.[0].location}}</li>
+                                         <li class="list-group-item"> Registerd Date : {{property_agent_id.[0].created_at}}</li>
+                                       </ul>
+                                       </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                       <button class="btn btn-danger" name="button">Block</button>
+                                       <button class="btn btn-warning" name="button">Send Warning!</button>
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+
+                               <button type="button" class="btn btn-danger delete_property" data-id="{{ id }}">Remove Property <span class="fa fa-trash-o"></span></button>
+                           </div>
+                         </div>
+
+                       </div>
+                     </div>
+                 {{/each}}
+                 <br>
+                 <br>
+                  <h4>land posts</h4>
+                  <ul class="list-group">
+                   {{#if land}}
+                   {{#each land}}
+                   <li class="list-group-item land-{{id}}">{{land_title}} <span data-id="{{ id }}" class="fa fa-trash-o delete_land" style="position:absolute;right:10px;font-size:20px;cursor:pointer"></span></li>
+                   {{/each}}
+                     {{else}}
+                     <div class="alert alert-info" role="alert">
+                        You have no achived land post
+                     </div>
+                   {{/if}}
+                 </ul>
+                    </div>
+                  </div>
+               </div>
+           </div>
+           <p>
+           <!-- /.row -->
+</div> --}}

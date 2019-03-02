@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <style media="screen">
+      .page{{ currentPage }}{
+        background: #4caf50;
+      }
+      .page{{ currentPage }} a{
+        color:white;
+      }
+    </style>
+    {{#each land}}
+     <a href="/land/{{ id }}" >
+     <div class="col-lg-3">
+       <div class="land-display" data-hover="land">
+         <h4>{{ land_title }}</h4>
+         <p><i class="icon-location-pin"></i>{{land_location}}</p>
+         <div class="">
+           <i class="icon-user"></i> <a href="/agent/">Admin</a><span></span>
+           <span style="font-size:20px;color:green; border-radius:100%"><i class="fa fa fa-check-circle" aria-hidden="true"></i></span>
+         </div>
+       </div>
+     </div>
+   </a>
+     {{/each}}
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      {{#if  paginate.hasPreviousPages}}
+          <a href="{{paginate.href}}"><span class="fa fa-angle-left"></span></a>
+      {{/if}}
+      {{#each pages}}
+      <button style="padding:10px" type="button" class="btn btn-default page{{number}}">
+        <a class="page-count" href="{{url}}">{{number}}</a>
+      </button>
+      {{/each}}
+      {{#if paginate.hasNextPages.[0] }}
+          <a href=""><span class="fa fa-angle-right"></span></a>
+      {{/if}}
+    </div>
+  </div>
+  <br>
+</div>

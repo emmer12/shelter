@@ -1,0 +1,35 @@
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">Agent</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="/" rel="home"><span itemprop="name">Home</span></a> <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">{{ agent.fullname }}</span><meta itemprop="position" content="3" /></li></ul></div></nav> </div>
+</div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+  <div class="agent-div center-block">
+    <img src="/uploads/images/{{ agentInfo.profile_image }}" alt="Shelt" class="img-rounded center-block">
+    <div class="center">
+      <h4> {{ agentInfo.firstname  }} {{ agentInfo.lastname }} </h4>
+      <h5> {{ agentInfo.company }}</h5>
+      <h5> {{ agentInfo.email }}</h5>
+      <h5> <a href="tel:{{ agentInfo.phone_number }}">{{ agentInfo.phone_number }}</a></h5>
+      <div class="agent-socials">
+        <div class="inner center-block">
+          <a href="#"> <i class="fa fa-facebook"></i> </a>
+          <a href="#"> <i class="fa fa-whatsapp"></i> </a>
+          <a href="#"> <i class="fa fa-twitter"></i> </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

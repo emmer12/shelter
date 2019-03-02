@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    {{#each forSale}}
+    <div class="property-listings property-listings-type-grid ">
+    <div class="property-item single-property-item col-lg-4 col-md-4 col-sm-6 col-xs-12 post-117 property type-property status-publish has-post-thumbnail hentry location-residential-properties epl-status-current" >
+    <div class="property-main">
+    <div class="property-wrap">
+    <div class="property-item">
+    <figure class="item-thumb">
+    <a class="hover-effect" href="/property/{{ id }}">
+    <img src="/uploads/images/{{ property_images.[0] }}" class="img-responsive pro-image" alt="" srcset=""  /> </a>
+    <div class="label-inner"><span class="label-status label">exclusive</span></div>
+    <div class="price">
+    <span class="item-sub-price">&#x20A6;{{ property_price }}</span> </div>
+      {{#if special_product }}
+      <ul class="actions"><li><span class="" style="font-size:20px;color:green; border-radius:100%">
+      <i class="fa fa-check-circle" aria-hidden="true">
+      </i></span></li></ul>
+      {{/if}}
+    </figure>
+    <div class="item-body">
+    <h3 class="property-title"><a href="property/parc-riviera-review/index.html">{{ property_category }}</a></h3>
+    <div class="adderess"><i class="icon-location-pin"></i>{{ property_location }}</div>
+    <div class="info">
+    <p>
+     {{# each property_features }}
+    <button class='btn btn-default btn-sm' style='color:green'> {{this}} </button>
+    {{/ each }}
+    </p>
+    <p>House</p> </div>
+    </div>
+    </div>
+    </div>
+    <div class="item-foot date hide-on-list">
+     <div class="pull-left"><span class="prop-user-agent"><i class="icon-user"></i> <a href="/agent/{{property_agent_id.[0].id}}">
+       {{property_agent_id.[0].company}}</a></span></div> <div class="pull-right"><span class="prop-date"><i class="icon-calendar"></i>
+       {{ created_at }}</span>
+     </div>
+     </div>
+    </div>
+    </div>
+  </div>
+  {{/each}}
+  </div>
+</div>

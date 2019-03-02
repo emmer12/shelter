@@ -1,0 +1,33 @@
+{{> messages }}
+<div class="dashboard-container">
+  <div class="sidebar-admin">
+    <span id='admin-bar-close' class="fa fa-times pull-right" ></span>
+    <div class="sidebar-items">
+      <ul>
+        <li> <a href="./requests">Requests  <span class="pull-right">5</span></a></li>
+        <li> <a href="./post-property">Post Property  </a></li>
+        <li> <a href="./post-land">Post Land  </a></li>
+        <li> <a href="./allagents">Agents<span class="pull-right">5</span></a></li>
+        <li> <a href="./prop-info">Properties Info<span class="pull-right">5</span></a></li>
+        <li class="active-admin-nav"> <a href="./land-info">Lands Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./settings">Settings</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="dashboard-content pull-right">
+      <h4>land posts</h4>
+                  <ul class="list-group">
+                   {{#if land}}
+                   {{#each land}}
+                   <li class="list-group-item land-{{id}}">{{land_title}} <span data-id="{{ id }}" class="fa fa-trash-o delete_land" style="position:absolute;right:10px;font-size:20px;cursor:pointer"></span></li>
+                   {{/each}}
+                     {{else}}
+                     <div class="alert alert-info" role="alert">
+                        You have no achived land post
+                     </div>
+                   {{/if}}
+                 </ul>
+  </div>
+</div>
+<div class="overlay"></div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+{{> header}}
+  <body class="home page-template-default page page-id-259 wp-custom-logo kingcomposer kc-css-system group-blog xt-page-layout-full-width xt-no-page-title xt-no-page-sidebar xt-header-type-header_info xt-pre-loader-enable">
+    {{#if hasError }}
+      <div class="alert alert-danger alert-dismissible fade in" role="alert">
+      {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {{/if}}
+    {{> nav }}
+     {{{ body }}}
+    <!-- footer Start  -->
+    {{> notify-me }}
+    {{> footer-div }}
+
+
+      <!-- footer end  -->
+      <!--Import jQuery before materialize.js-->
+
+    {{> footer }}
+  </body>
+</html>

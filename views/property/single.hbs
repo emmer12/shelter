@@ -1,0 +1,186 @@
+{{#if property}}
+
+<div class="xt-page-title-area">
+<div class="xt-page-title">
+<div class="container">
+<h1 class="entry-title">{{ property.property_title }}</h1>
+</div>
+</div>
+<div class="xt-breadcrumb-wrapper">
+<div class="container">
+<nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><div class="xt-breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../../index.html" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item"><a href="../index.html"><span itemprop="name">Properties</span></a><meta itemprop="position" content="2" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">{{property.property_category}}</span><meta itemprop="position" content="3" /></li></ul></div></nav> </div>
+</div>
+</div>
+<br>
+<br>
+<div class='container'>
+	<div id="content" class="site-content ">
+	  <div class="appulse-main-content-inner">
+	    <div id="primary" class="content-area">
+	    <main id="main" class="site-main" role="main">
+	     <div id="post-129" class="epl-listing-single epl-property-single view-expanded post-129 property type-property status-publish has-post-thumbnail hentry location-residential-properties epl-status-current">
+	      <div class="entry-header epl-header epl-clearfix">
+	      <div class="property-head">
+	       <div class="row">
+	          <div class="col-lg-6 col-md-7 col-sm-12">
+							<div class="epl-property-featured-icons property-feature-icons epl-clearfix">
+								<h3 class="entry-title"></h3>
+									<h3 class="widget-title">{{ property.property_title }}</h3>
+						  </div>
+							<div class="entry-image">
+							  <div class="epl-featured-image it-featured-image">
+							   <a href="index.html">
+							    <img width="100%"  src="/uploads/images/{{ property.property_images.[0] }}" class="index-thumbnail wp-post-image" alt=""  />
+								 </a>
+							 </div>
+							</div>
+	             <div class="entry-content epl-content ">
+	                <div class="epl-tab-wrapper tab-wrapper">
+	                   <div class="epl-tab-section epl-section-property-details">
+	                    <h5 class="epl-tab-title tab-title">Property Location</h5>
+	                      <div class="epl-tab-content tab-content">
+	                       <div class="epl-property-address property-details">
+	                        <div class="adderess" style="font-size:14px"><i class="icon-location-pin"></i> {{ property.property_location }}</div>
+											  </div>
+											</div>
+										</div>
+		                   <div class="epl-tab-section epl-section-property-details">
+		                    <h5 class="epl-tab-title tab-title">Property Address</h5>
+		                      <div class="epl-tab-content tab-content">
+		                       <div class="epl-property-address property-details">
+		                        <div class="adderess" style="font-size:14px"><i class="fa fa-location-arrow"></i> {{ property.property_address }}</div>
+												  </div>
+												</div>
+											</div>
+	             <div class="epl-tab-section epl-section-description">
+	               <h5 class="epl-tab-title tab-title">Description</h5>
+	               <div class="epl-tab-content tab-content">
+                   <p>{{ property.property_details }}</p>
+								 </div>
+							 </div>
+							 <div class="epl-tab-section epl-section-description">
+               <h5 class="epl-tab-title tab-title">Category</h5>
+							  <div class="epl-tab-content tab-content">
+									<p class="secondary-heading"><a style="color:green;" href="/property/category/{{ property.property_category }}"><span class="epl-property-category">{{ property.property_category }}</span></a></p>
+							  </div>
+  						 </div>
+							<div class="epl-tab-section epl-tab-section-features">
+							<h5 class="epl-tab-title epl-tab-title-property-features tab-title">Property Features</h5>
+							<div class="epl-tab-content tab-content">
+							<ul class="epl-property-features listing-info epl-tab-2-columns">
+								{{#each property.property_features  }}
+							 		<li class="property-category">{{ this }}</li>
+							    {{/each}}
+							</ul>
+							</div>
+						</div>
+						<div class="epl-gallery property-gallery">
+						<div class="epl-gallery-entry entry-gallery epl-clearfix">
+						<div id='gallery-1' class='gallery galleryid-129 gallery-columns-3 gallery-size-thumbnail'>
+							{{#each property.property_images  }}
+								<figure class='gallery-item'>
+									<div class='gallery-icon landscape'>
+									<a href='/uploads/images/{{ this }}'><img  src="/uploads/images/{{ this }}" class="attachment-thumbnail size-thumbnail" alt="" srcset="/uploads/images/{{ this }} "  /></a>
+									</div>
+								</figure>
+						   {{/each }}
+						</div>
+						</div>
+						</div>
+						<div class="epl-tab-section epl-tab-section-google-map">
+						   <h5 class="epl-tab-title epl-tab-title-property-google-map tab-title">Property Map</h5>
+						 <div class="map_container" style="height: 400px;">
+						 <div class="elm google-maps" id="elm-singular-map" style="height: 400px; padding: 0px; margin: 0px;"></div>
+							 <div id="gmap-loading">Loading Map
+								  <div class="spinner map_loader" id="listing_loader_maps">
+										<div class="rect1"></div>
+										<div class="rect2"></div>
+										<div class="rect3"></div>
+										<div class="rect4"></div>
+										<div class="rect5"></div>
+							    </div>
+							 </div>
+						</div>
+						</div>
+						{{#if property.special_rate}}
+						<div id="epl-box5" class="epl-author-box-container">
+						<a href="/property/buy/{{ property.id }}"  style="background:#4caf50" class="btn btn-default">Buy Now</a>
+					</div>
+							{{else}}
+							<div id="epl-box5" class="epl-author-box-container">
+								<h5 class="epl-tab-title epl-tab-title-property-author tab-title">Property Agent</h5>
+								<div class="epl-author-box-outer-wrapper author-box-outer-wrapper epl-clearfix">
+									<div class="epl-author-box epl-author-image author-box author-image">
+										<img src="/uploads/images/{{property.property_agent_id.[0].profile_image }}" width="150" height="150" alt="{{ property.property_agent_id.[0].fullname}} " class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" /> </div>
+										<div id="tab-1" class="epl-author-author_id epl-author-tab-content epl-author-current epl-author-box author-box">
+											<div class="epl-author-contact-details author-contact-details">
+												<h5 class="epl-author-title author-title">
+													<a href="/agent/{{ property.property_agent_id.[0].id}}">
+														{{ property.property_agent_id.[0].fullname}} </a>
+													</h5>
+													<div class="epl-author-position author-position">
+														<span class="label-position">{{property.property_agent_id.[0].firstname}}</span>
+														<span class="label-position">{{property.property_agent_id.[0].lastname}}</span>
+														<span class="position">Founder & CEO at {{property.property_agent_id.[0].company}}</span>
+													</div>
+													<div class="epl-author-contact author-contact">
+														<span class="label-mobile"></span>
+														<span class="mobile"> <a href="tel:{{property.property_agent_id.[0].phone_number}}">{{property.property_agent_id.[0].phone_number}}</a></span>
+													</div>
+												</div>
+												<div class="epl-clearfix"></div>
+												<div class="epl-author-social-buttons author-social-buttons">
+													<a class="epl-author-icon author-icon email-icon-24" href="../../cdn-cgi/l/email-protection.html#1f756a6c6b66715f7e6f6f6a736c7a317c7072" title="Contact JUSTYN MICHALLEK by Email">Email</a>
+													<a class="epl-author-icon author-icon facebook-icon-24" href="http://facebook.com/#" title="Follow JUSTYN MICHALLEK on Facebook">Facebook</a>
+													<a class="epl-author-icon author-icon twitter-icon-24" href="http://twitter.com/#" title="Follow JUSTYN MICHALLEK on Twitter">Twitter</a>
+													<a class="epl-author-icon author-icon google-icon-24" href="http://{{property.property_agent_id.[0].email}}/#" title="Follow JUSTYN MICHALLEK on Google">Google</a>
+													<a class="epl-author-icon author-icon linkedin-icon-24" href="http://linkedin.com/pub/#" title="Follow JUSTYN MICHALLEK on Linkedin">LinkedIn</a>
+													<a class="epl-author-icon author-icon skype-icon-24" href="skype:#" title="Follow JUSTYN MICHALLEK on Skype">Skype</a></div>
+												</div>
+											</div>
+										</div>
+
+						{{/if}}
+
+			</div>
+			</div>
+			</div>
+		<div class="col-lg-6" >
+			<aside id="secondary" class="widget-area">
+			<section id="epl_recent_property-4" class="widget widget_epl_recent_property">
+				<h3 class="widget-title">Latest Listings</h3><div class="epl-property-widget-image-wrapper">
+		     {{#each recent_property}}
+
+					<div id="post-130" class="epl-widget epl-listing-widget property-widget-image epl-widget-status-current">
+						<div class="entry-header">
+							<div class="epl-archive-entry-image">
+								<a href="./{{id}}">
+								<div class="epl-blog-image">
+								<img width="150" height="150" src="/uploads/images/{{ property_images.[0] }}" class="teaser-left-thumb wp-post-image" alt=""  /> </div>
+								</a>
+							</div>
+						</div>
+						<div class="entry-content">
+							<h5 class="property-heading"><a href="./{{id}}">{{ property_title }}</a></h5>
+							<div class="property-address">
+								<div class="property-meta street-name"> {{ property_location }} </div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+			   </div>
+			</section>
+			</aside>
+		</div>
+	</main>
+	</div>
+	</div>
+	</div>
+  </div>
+
+{{else}}
+ <div class="alert alert-warning" role="alert">
+	 No property found!
+   <a href="#" class="alert-link">Click here to find one</a>
+ </div>
+{{/if}}

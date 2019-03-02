@@ -1,0 +1,91 @@
+{{> messages }}
+<div class="dashboard-container">
+  <div class="sidebar-admin">
+    <span id='admin-bar-close' class="fa fa-times pull-right" ></span>
+    <div class="sidebar-items">
+      <ul>
+        <li> <a href="./requests">Requests  <span class="pull-right">5</span></a></li>
+        <li> <a href="./post-property">Post Property  </a></li>
+        <li> <a href="./post-land">Post Land  </a></li>
+        <li> <a href="./allagents">Agents<span class="pull-right">5</span></a></li>
+        <li class="active-admin-nav"> <a href="./prop-info">Properties Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./land-info">Lands Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./settings">Settings</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="dashboard-content pull-right">
+                <h4>Users/Property Control Panel</h4>
+                 {{#each property}}
+                     <div class="card pro-{{id}}">
+                       <div class="card-block">
+                         <h4 class="card-title"></h4>
+                           <a class="btn btn-default" style="color:#222;min-width:300px;text-align:justify" data-toggle="collapse" href="#collapseExample{{id}}" aria-expanded="false" aria-controls="collapseExample">
+                             {{property_title}} <span class="caret"></span>
+                           </a>
+                         </p>
+                         <div class="collapse" id="collapseExample{{id}}">
+                           <div class="card card-block">
+                              <br>
+                              <b>Details</b><span class="fa fa-angle-double-right "> </span><span>{{property_details}}</span><br><hr>
+                              <b>Category</b><span class="fa fa-angle-double-right "> </span><span>{{property_category}}</span><br><hr>
+                              <b>Features</b><span class="fa fa-angle-double-right "> </span>
+                              {{#each property_features}}
+                                <button type="button" style="color:gray" class="btn btn-default" name="button">{{this}}</button>
+                              {{/each}}<br><hr>
+                              <b>Location</b><span class="fa fa-angle-double-right "> </span><span>{{property_location}}</span><br><hr>
+                              <b>Address</b><span class="fa fa-angle-double-right "> </span><span>{{property_address}}</span><br><hr>
+                              <b>Time</b><span class="fa fa-angle-double-right "> </span><span>{{created_at}}</span><br><hr>
+                               <b>Images</b><br>
+                              {{#each property_images}}
+                                 <img class="ad-pt-img" src="/uploads/images/{{this}}" alt="">
+                              {{/each}}
+                              <hr>
+
+                              <button  style="color:white" class="btn btn-success" data-toggle="modal" data-target="#userInfo{{id}}" >Agent</button>
+                               <div id="userInfo{{id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                 <div class="modal-dialog modal-lg">
+                                   <div class="modal-content">
+                                     <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                       </button>
+                                       <h4 class="modal-title" id="myModalLabel">AGENT INFORMATION</h4>
+                                     </div>
+                                     <div class="modal-body">
+                                       <div class="user-info">
+                                         <div class="" style="text-align:center">
+                                           <img  src="/images/default.png" alt="">
+                                       </div>
+                                         <hr>
+                                         <ul class="list-group">
+                                         <li class="list-group-item">Agent Fullname : {{property_agent_id.[0].fullname}} </li>
+                                         <li class="list-group-item">Agent Username : {{property_agent_id.[0].username}}</li>
+                                         <li class="list-group-item">Agent Company Name : {{property_agent_id.[0].company}}</li>
+                                         <li class="list-group-item">Agent Email Address : {{property_agent_id.[0].email}}</li>
+                                         <li class="list-group-item">Agent Phone Number : {{property_agent_id.[0].phone_number}}</li>
+                                         <li class="list-group-item">Agent Location : {{property_agent_id.[0].location}}</li>
+                                         <li class="list-group-item"> Registerd Date : {{property_agent_id.[0].created_at}}</li>
+                                       </ul>
+                                       </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                       <button class="btn btn-danger" name="button">Block</button>
+                                       <button class="btn btn-warning" name="button">Send Warning!</button>
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+
+                               <button type="button" class="btn btn-danger delete_property" data-id="{{ id }}">Remove Property <span class="fa fa-trash-o"></span></button>
+                           </div>
+                         </div>
+
+                       </div>
+                     </div>
+                 {{/each}}
+  </div>
+
+</div>
+<div class="overlay"></div>

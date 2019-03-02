@@ -1,0 +1,55 @@
+{{> messages }}
+<div class="dashboard-container">
+  <div class="sidebar-admin">
+    <span id='admin-bar-close' class="fa fa-times pull-right" ></span>
+    <div class="sidebar-items">
+      <ul>
+        <li class="active-admin-nav"> <a href="./requests">Requests  <span class="pull-right">5</span></a></li>
+        <li> <a href="./post-property">Post Property  </a></li>
+        <li> <a href="./post-land">Post Land  </a></li>
+        <li> <a href="./allagents">Agents<span class="pull-right">5</span></a></li>
+        <li> <a href="./prop-info">Properties Info<span class="pull-right">5</span></a></li>
+        <li> <a href="./land-info">Lands Info<span class="pull-right">5</span></a></li>
+        <li > <a href="./settings">Settings</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="dashboard-content pull-right">
+      {{#if requests }}
+           {{#each requests}}
+              <div class="request-div">
+                 <h5 class="card-title">{{ type.[0] }} Request</h5>
+                 <i>{{created_at}}</i><br>
+                  <div class="pull-right requset-action">
+                    <button class="btn btn-sm btn-success request-details-action" data="retuest-details-{{id}}">View details</button><button class="btn btn-sm btn-danger"><span class="fa fa-trash-o"></span></button>
+                  </div>
+              </div><br>
+              <div class="retuest-details retuest-details-{{id}}">
+                <i class="fa fa-times r-cancel pull-right" ></i>
+                <div class="">
+                  <h4 class="center">A request for {{ type.[0] }}</h4>
+                   {{#if type.[2] }}
+                   {{else}}
+                      <h4>Property Details</h4>
+                      <p class="epl-search-label fm-label">{{ type.[0] }} :: 654645 </p>
+                      <p> property Link :: <a href="/property/{{property_id}}">property link</a></p>
+                      <h4>Client Details</h4>
+                      <p> fullname :: {{ fullname}} </p>
+                      <p> phone_number :: <a href="tel:{{ phone_number}}"> {{ phone_number}}</a> </p>
+                      <p> other_phone_number :: <a href="tel:{{ other_phone_number}}"> {{ other_phone_number}}</a> </p>
+                      <p> email Address :: {{ email}} </p>
+                      <p> location :: {{ location}} </p>
+                   {{/if}}
+                </div>
+              </div>
+           {{/each}}
+        {{else}}
+        <div class="alert alert-warnning" role="alert">
+          You do not have any requset
+        </div>
+      {{/if}}
+  </div>
+
+</div>
+<div class="overlay"></div>

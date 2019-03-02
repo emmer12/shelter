@@ -1,0 +1,6 @@
+(function($){'use strict';$(document).on('click','.add-fav-button',function(){var button=$(this);var post_id=button.attr('data-post-id');var security=button.attr('data-nonce');var iscomment=button.attr('data-iscomment');var content=button.attr('data-content');var allbuttons;if(iscomment==='1'){allbuttons=$('.add-fav-comment-button-'+post_id);}else{allbuttons=$('.add-fav-button-'+post_id);}
+if(content==''){content='';}
+if(post_id!==''){$.ajax({type:'POST',url:simpleLikes.ajaxurl,data:{action:'process_simple_like',post_id:post_id,nonce:security,is_comment:iscomment,},beforeSend:function(){button.addClass('add-fav-loading');button.append('<i class="add-fav-loader fa fa-circle-o-notch fa-spin fa-fw"></i>');},success:function(response){var icon=response.icon;allbuttons.html(icon+content);if(content){allbuttons.html(icon+content);}else{allbuttons.html(icon);}
+if(response.status==='unliked'){var like_text=simpleLikes.like;allbuttons.prop('title',like_text);allbuttons.removeClass('liked');}else{var unlike_text=simpleLikes.unlike;allbuttons.prop('title',unlike_text);allbuttons.addClass('liked');}
+button.find('.add-fav-loader').remove();button.removeClass('add-fav-loading');}});}
+return false;});})(jQuery);

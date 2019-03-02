@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      {{#if  paginate.hasPreviousPages}}
+          <a href="{{pagenate.href}}"><span class="fa fa-angle-left"></span></a>
+      {{/if}}
+      {{#each pages}}
+      <button style="padding:10px" type="button" class="btn btn-default page{{number}}">
+        <a class="page-count" href="{{url}}">{{number}}</a>
+      </button>
+      {{/each}}
+      {{#if paginate.hasNextPages.[0] }}
+          <a href="{{paginate.href}}"><span class="fa fa-angle-right"></span></a>
+      {{/if}}
+    </div>
+  </div>
+  <br>
+</div>
+<style media="screen">
+  .page{{ currentPage }}{
+    background: #4caf50;
+  }
+  .page{{ currentPage }} a{
+    color:white;
+  }
+</style>

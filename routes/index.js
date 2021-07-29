@@ -3,6 +3,22 @@ var router = express.Router();
 var paginate=require('express-paginate');
 var Property=require('../modules/property')
 var Land=require('../modules/land')
+var Agent=require('../modules/agent')
+
+
+
+/* GET API */
+router.get('/api/users',function(req,res,next) {
+  Agent.find({},function(err,data) {
+    if (err) {
+      return
+    }
+    return res.json({data:data});
+
+  })
+})
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
    var message=req.flash('danger');

@@ -71,9 +71,11 @@ router.post('/', function(req, res, next) {
   }
 });
 
+
 router.get("/buy/request/:id",function(req,res) {
   res.render("land/request",{land_id:req.params.id})
 })
+
 
 router.post("/buy/request",function(req,res) {
   var fullname=req.body.fullname;

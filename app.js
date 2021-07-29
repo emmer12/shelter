@@ -21,11 +21,11 @@ var property = require('./routes/property');
 var admin = require('./routes/admin');
 var land = require('./routes/land');
 
-fs.readdir('./public/uploads/images',functi on(err,file) {
+fs.readdir('./public/uploads/images',function(err,file) {
   console.log(file.length);
 })
 // datab     ase connection
-mongoose.conn      ect("mongodb://localhost/shelter");
+mongoose.connect("mongodb://localhost/shelter");
 let db=mongoose.connection;
 db.once('open',function(){
   console.log("connected");
